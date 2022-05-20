@@ -13,4 +13,10 @@ export class tableService{
   get():Observable<tableModel[]>{
     return this.http.get<tableModel[]>(api_url + 'grid')
   }
+  post(data: any){
+    return this.http.post(`${api_url}grid`, data)
+  }
+  delete(id: any):Observable<tableModel[]>{
+    return this.http.get<tableModel[]>(`${api_url}/grid/${id}`)
+  }
 }

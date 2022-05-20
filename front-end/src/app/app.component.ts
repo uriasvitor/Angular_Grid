@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tableModel } from './models/table.model';
+import { MyErrorStateMatcher } from './services/ErrorState';
 import { tableService } from './services/table.service';
 
 @Component({
@@ -10,8 +12,22 @@ import { tableService } from './services/table.service';
 export class AppComponent implements OnInit{
   displayedColumns: string[] = ['Nome', 'SobreNome', 'Idade', 'Saldo'];
   datasource!:tableModel[];
-
+  form!:FormGroup;
+  matcher = new MyErrorStateMatcher();
   constructor(private tableservice:tableService){}
+
+
+  ngOnInit(): void {
+    this.getData()
+    this.form = new FormGroup({
+      Nome: new FormControl('',[Validators.required]),
+      SobreNome: new FormControl('',[Validators.required]),
+      Idade: new FormControl('',[Validators.required]),
+      Saldo: new FormControl('',[Validators.required]),
+    })
+    console.log(this.datasource)
+    console.log(this.form)
+  }
 
   getData(){
     this.tableservice.get().subscribe((data:any)=>{
@@ -19,8 +35,14 @@ export class AppComponent implements OnInit{
       console.log(data)
     })
   }
-  ngOnInit(): void {
-    this.getData()
-    console.log(this.datasource)
+
+  postData(){
+    this.tableservice.post(this.form.value).subscribe((res)=>{
+      console.log(res)
+    })
+    console.log(this.form.value)
   }
+
+
+
 }

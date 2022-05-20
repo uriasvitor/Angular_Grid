@@ -1,11 +1,30 @@
 
-
 .container{
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: relative;
+}
+
+.example-form {
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 15px;
+}
+form{
+  text-align: center;
+}
+button{
+  margin: 0 0 0 10px;
+}
+.example-full-width {
+  width: 10%;
+}
+.mat-form-field{
+  margin: 0 0 0 10px;
+}
+.title{
+  text-align: center;
 }
 
 p{
@@ -18,17 +37,15 @@ table {
   width: 100%;
 }
 
-th{
-  text-align: center;
-}
-
 .mat-elevation-z8{
   width: 60%;
 }
+
 .mat-header-cell{
   text-align: center;
   outline: 1px solid rgb(150, 150, 150);
 }
+
 .mat-cell{
   text-align: center;
   outline: 1px solid rgb(150, 150, 150);
@@ -37,3 +54,4 @@ th{
 th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
   padding: 0;
 }
+

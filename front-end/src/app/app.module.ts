@@ -7,7 +7,9 @@ import { MatIconModule } from '@angular/material/icon'
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AppComponent } from './app.component';
     MatTableModule,
     MatPaginatorModule,
     HttpClientModule,
+    MatInputModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],
