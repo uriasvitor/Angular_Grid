@@ -1,11 +1,13 @@
-const express = require('express');
-const server = express();
-const PORT = 8080;
+const express = require('express')
+const app = express()
+var cors = require('cors')
 
-server.get('/',(req,res)=>{
-    return res.json({mensagem:'Nossa Api'})
-});
+app.use(cors())
 
-server.listen(3000, ()=>{
-    console.log('funfando');
-})
+app.use(express.json())
+
+const routerGrid = require('./routes/datagrid')
+
+app.use("/grid",routerGrid);
+
+app.listen(8080);
