@@ -10,3 +10,5 @@
 # Angular_Grid
 Sistema de Grid Dinamica
 ![image](https://user-images.githubusercontent.com/81401104/169731665-dd77811e-1100-4731-a0c5-0bfab0541e79.png)
+
+![image](https://user-images.githubusercontent.com/81401104/169731974-0d8a6485-b936-4fc2-ae40-aeb12ea075ee.png)
