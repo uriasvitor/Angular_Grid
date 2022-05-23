@@ -10,7 +10,7 @@ import { tableService } from './services/table.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  displayedColumns: string[] = ['Id','Nome', 'SobreNome', 'Idade', 'Saldo','Actions'];
+  displayedColumns: string[] = ['id','nome', 'sobrenome', 'idade', 'saldo','actions'];
   datasource!:tableModel[];
   form!:FormGroup;
   matcher = new MyErrorStateMatcher();

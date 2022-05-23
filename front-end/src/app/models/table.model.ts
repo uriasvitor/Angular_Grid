@@ -1,7 +1,7 @@
 export interface tableModel{
-  Id?:number,
-  Nome?:string,
-  SobreNome?:string,
-  Idade?:number,
-  Saldo?:string
+  id?:number,
+  nome?:string,
+  sobrenome?:string,
+  idade?:number,
+  saldo?:string
 }
