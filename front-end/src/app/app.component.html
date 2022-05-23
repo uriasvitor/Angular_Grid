@@ -13,7 +13,7 @@
         [errorStateMatcher]="matcher"
         placeholder="Ex. Pablo"
       />
-      <mat-error *ngIf="form.hasError('email') && !form.hasError('required')">
+      <mat-error *ngIf="form.hasError('') && !form.hasError('required')">
         Digite um nome
       </mat-error>
     </mat-form-field>
@@ -53,7 +53,7 @@
       matInput
       formControlName="Saldo"
       [errorStateMatcher]="matcher"
-      placeholder="Ex. R$ 1000"
+      placeholder="Ex. R$ 15221"
     />
     <span matPrefix>$&nbsp;</span>
     <span matSuffix>.00</span>
@@ -61,11 +61,17 @@
       Digite seu saldo bancario
     </mat-error></mat-form-field>
 
-    <button mat-raised-button color="warn" (click)="postData()">Enviar</button>
+    <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="postData()">Enviar</button>
   </form>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="datasource">
+
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef>Numero</th>
+        <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
+      </ng-container>
+
       <ng-container matColumnDef="Nome">
         <th mat-header-cell *matHeaderCellDef>Nome</th>
         <td mat-cell *matCellDef="let element">{{ element.Nome }}</td>
@@ -85,6 +91,13 @@
         <th mat-header-cell *matHeaderCellDef>Saldo</th>
         <td mat-cell *matCellDef="let element">
           {{ element.Saldo | currency }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="deleteById(element.Id)">Delete</button>
         </td>
       </ng-container>
 

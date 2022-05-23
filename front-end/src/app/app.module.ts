@@ -8,6 +8,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
+
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -24,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatInputModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    MatCheckboxModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

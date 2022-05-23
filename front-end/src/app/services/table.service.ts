@@ -17,6 +17,6 @@ export class tableService{
     return this.http.post(`${api_url}grid`, data)
   }
   delete(id: any):Observable<tableModel[]>{
-    return this.http.get<tableModel[]>(`${api_url}/grid/${id}`)
+    return this.http.delete<tableModel[]>(`${api_url}grid/${id}`)
   }
 }

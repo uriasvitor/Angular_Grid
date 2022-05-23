@@ -10,7 +10,7 @@ import { tableService } from './services/table.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  displayedColumns: string[] = ['Nome', 'SobreNome', 'Idade', 'Saldo'];
+  displayedColumns: string[] = ['Id','Nome', 'SobreNome', 'Idade', 'Saldo','Actions'];
   datasource!:tableModel[];
   form!:FormGroup;
   matcher = new MyErrorStateMatcher();
@@ -40,9 +40,16 @@ export class AppComponent implements OnInit{
     this.tableservice.post(this.form.value).subscribe((res)=>{
       console.log(res)
     })
+    this.getData();
     console.log(this.form.value)
   }
 
+  deleteById(id:any){
+    this.tableservice.delete(id).subscribe((data:any)=>{
+      console.log(data)
+    })
+    this.getData();
+  }
 
 
 }

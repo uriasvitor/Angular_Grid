@@ -11,9 +11,11 @@
   max-width: 100%;
   font-size: 15px;
 }
+
 form{
   text-align: center;
 }
+
 button{
   margin: 0 0 0 10px;
 }
@@ -55,3 +57,6 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
   padding: 0;
 }
 
+.demo-row-is-clicked {
+  font-weight: bold;
+}
