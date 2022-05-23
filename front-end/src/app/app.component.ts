@@ -41,6 +41,7 @@ export class AppComponent implements OnInit{
       console.log(res)
     })
     this.getData();
+    this.form.reset();
     console.log(this.form.value)
   }
 
